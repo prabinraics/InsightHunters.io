@@ -99,7 +99,37 @@ Additional details are available in the **Data Preprocessing Report**.
 
 ---
 
-# 8. System Design Summary
+# 8. Data Analytics Summary
+
+After preprocessing, the dataset was analyzed to identify meaningful patterns and validate the quality of the data.
+
+The analysis included:
+
+- Exploratory Data Analysis (EDA)
+- Descriptive statistics
+- Tournament distribution analysis
+- Team performance analysis
+- Match duration analysis
+- Score difference analysis
+- Dataset validation
+
+The generated insights formed the basis of the dashboard statistics and visualizations.
+
+# Key Findings
+
+The analysis produced several important insights:
+
+- The dataset contains 150 badminton matches played between 2024 and 2025.
+- The average match duration is 53.4 minutes.
+- China recorded the highest number of team wins (22).
+- The three tournaments are fairly balanced with 56, 48, and 46 matches.
+- Match durations range from 30 to 75 minutes.
+- Home and away teams have similar average scores, indicating balanced competition.
+- No unrealistic score values or duplicate records were identified during validation.
+
+---
+
+# 9. System Design Summary
 
 The application follows a modular architecture that separates the project into different functional components.
 
@@ -113,7 +143,7 @@ Further details are provided in the **System Design Report**.
 
 ---
 
-# 9. Dashboard Features
+# 10. Dashboard Features
 
 The dashboard provides several features that allow users to explore badminton match data efficiently.
 
@@ -146,7 +176,7 @@ The dashboard provides several features that allow users to explore badminton ma
 
 ---
 
-# 10. Visualizations
+# 11. Visualizations
 
 The application automatically generates several visualizations to support data interpretation.
 
@@ -163,7 +193,7 @@ These visualizations provide users with a graphical representation of badminton 
 
 ---
 
-# 11. Challenges Faced
+# 12. Challenges Faced
 
 Throughout the development of the project, several challenges were encountered.
 
@@ -178,7 +208,7 @@ These challenges were addressed through collaboration, careful planning, and reg
 
 ---
 
-# 12. Future Enhancements
+# 13. Future Enhancements
 
 Although the application successfully achieves its objectives, several improvements can be considered for future versions.
 
@@ -197,7 +227,7 @@ These enhancements would improve the functionality and scalability of the applic
 
 ---
 
-# 13. Project Outcome
+# 14. Project Outcome
 
 The project successfully achieved its intended objectives by developing a complete badminton analytics dashboard capable of processing, analyzing, and visualizing badminton match data.
 
@@ -205,7 +235,7 @@ The application demonstrates the successful integration of data engineering, sta
 
 ---
 
-# 14. Conclusion
+# 15. Conclusion
 
 The Mini Badminton Analytics Dashboard demonstrates how raw sports data can be transformed into meaningful information through data preprocessing, exploratory analysis, statistical computation, and visualization.
 
