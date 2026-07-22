@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Mini Badminton Analytics</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="{{ url_for('static',filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg">
+
+<div class="container">
+
+<a class="navbar-brand">
+
+🏸 Mini Badminton Analytics
+
+</a>
+
+</div>
+
+</nav>
+
+<div class="container mt-4">
+
+<div class="row">
+
+<div class="col-md-3">
+
+<div class="card text-center p-3">
+
+<div class="card-body">
+
+<h5>Total Matches</h5>
+
+<h2>{{ stats.total_matches }}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card text-center p-3">
+
+<div class="card-body">
+
+<h5>Winners</h5>
+
+<h2>{{ stats.total_winners }}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card text-center p-3">
+
+<div class="card-body">
+
+<h5>Tournaments</h5>
+
+<h2>{{ stats.total_tournaments }}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card text-center p-3">
+
+<div class="card-body">
+
+<h5>Avg Duration</h5>
+
+<h2>{{ stats.average_duration }}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="row">
+
+{% for plot in plots %}
+
+<div class="col-md-6">
+
+<div class="chart-card">
+
+<h4>{{ plot.title }}</h4>
+
+<img
+class="img-fluid"
+src="{{ url_for('static',
+filename='images/plots/' + plot.filename) }}">
+
+<p class="mt-2">
+
+{{ plot.caption }}
+
+</p>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<hr>
+
+<h3>Dataset Summary</h3>
+
+<table class="table table-bordered">
+
+<tr>
+
+<th>Rows</th>
+
+<td>{{ summary.rows }}</td>
+
+</tr>
+
+<tr>
+
+<th>Columns</th>
+
+<td>{{ summary.columns }}</td>
+
+</tr>
+
+<tr>
+
+<th>Missing Values</th>
+
+<td>{{ summary.missing_values }}</td>
+
+</tr>
+
+<tr>
+
+<th>Duplicate Rows</th>
+
+<td>{{ summary.duplicate_rows }}</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<footer>
+
+Mini Badminton Analytics Dashboard
+
+<br>
+
+Herald College Kathmandu
+
+</footer>
+
+<form>
+
+<select
+name="tournament"
+class="form-select">
+
+<option value="">
+All Tournaments
+</option>
+
+{% for t in tournaments %}
+
+<option>
+
+{{ t }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+<br>
+
+<button class="btn btn-success">
+
+Filter
+
+</button>
+
+</form>
+
+<hr>
+
+<h3>
+
+Recent Matches
+
+</h3>
+
+<table class="table table-striped">
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+
+<th>Home</th>
+
+<th>Away</th>
+
+<th>Winner</th>
+
+<th>Tournament</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for row in recent_matches.itertuples() %}
+
+<tr>
+
+<td>{{ row.date.date() }}</td>
+
+<td>{{ row.home_team }}</td>
+
+<td>{{ row.away_team }}</td>
+
+<td>{{ row.winner }}</td>
+
+<td>{{ row.tournament }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+
+</body>
+
+</html>
