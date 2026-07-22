@@ -89,7 +89,13 @@ The dataset includes information that supports various analytical operations wit
 
 These features enable the dashboard to generate meaningful summaries and visual insights for users.
 
----
+The dataset includes three engineered features that improve analytical capabilities:
+
+- TotalScore
+- ScoreDifference
+- DurationHours
+
+## These features support performance analysis, match competitiveness evaluation, and statistical visualization.
 
 # 7. Data Quality Assessment
 
