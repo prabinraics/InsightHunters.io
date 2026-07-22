@@ -87,7 +87,6 @@ mini-badminton-analytics/
 │
 ├── data/
 │   ├── raw/
-│   └── processed/
 │
 ├── docs/
 │   ├── DATASET_DOCUMENTATION.md
